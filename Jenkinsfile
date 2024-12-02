@@ -19,3 +19,18 @@ node {
  	}
 }
 
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/seheeIrypl02/Faniverse-DevOps.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+    }
+}
