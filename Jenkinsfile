@@ -1,14 +1,14 @@
 node {
 	def app
 	stage('Clone repository') {
-	git 'https://github.com/seheeIrypl02/Faniverse-DevOps.git'
+	git branch: 'main', url: 'https://github.com/seheeIrypl02/Faniverse-DevOps.git'
  	}
 	stage('Build image') {
 		app = docker.build("iryplsehee02/faniverse-devops")
  	}
  	stage('Test image') {
  		app.inside{
- 			sh'gradle test'
+ 			sh 'gradle test'
  		}
  	}
  	stage('Push image') {
