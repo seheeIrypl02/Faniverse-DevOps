@@ -7,10 +7,11 @@ node {
 		app = docker.build("iryplsehee02/faniverse-devops")
  	}
  	stage('Test image') {
- 		app.inside{
- 			sh 'gradle test'
- 		}
- 	}
+ 		dir('backend-repo/FaniverseBE') {
+			sh 'chmod +x gradlew'
+			sh './gradlew clean build test'
+		}
+	}
  	stage('Push image') {
  		docker.withRegistry('https://registry.hub.docker.com', 'iryplsehee02') {
  			app.push("${env.BUILD_NUMBER}")
