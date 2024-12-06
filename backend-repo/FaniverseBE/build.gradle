@@ -48,7 +48,6 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'io.github.cdimascio:dotenv-java:2.2.0'
-	clsspath "org.springframework.boot:spring-boot-gradle-plugin:2.7.15"
 }
 
 tasks.named('test') {
