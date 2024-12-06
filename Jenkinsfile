@@ -29,7 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh './backend-repo/FaniverseBE/gradlew build'
+                    sh '/home/sehee/Faniverse-DevOps/backend-repo/FaniverseBE/gradlew build'
                 }
             }
         }
