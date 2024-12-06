@@ -19,3 +19,19 @@ node {
  		}
  	}
 }
+
+pipeline {
+    agent any
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    sh './backend-repo/FaniverseBE/gradlew build'
+                }
+            }
+        }
+    }
+}
